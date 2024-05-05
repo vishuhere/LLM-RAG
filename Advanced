@@ -1,0 +1,72 @@
+Difference between different types of LLMs:
+
+1. Chat GPT:
+   High parameter, better AI understanding, lower context length of 2000, Good for coding (better UI UX), not updated since 2022, Does not contain knowledge graph.
+
+2: LLAMA2:
+   Low parameter (used for prediction), Higher context length up to 4000, more verbose (well-written), launch date 2023.
+
+3: Gemini:
+   Provides opinion, provides links, up-to-date information, provides content length up to 1 Million.
+
+4: Claude:
+   Better with visuality and interesting responses, is good for coding, is straight with facts, launch date of 2023, safety measures on top, less knowledge graph thus higher hallucination
+
+
+How Knowledge graphs are embedded into the learning of elements into different approaches?
+
+1. Pre training with knowledge graph info:
+   Inject knowledge from the knowledge graph into LLM during the pre-training Phase. By pre-training the LLM on data that includes information about entities and relationships from the knowledge graph.
+   Allowing a deeper understanding and how concepts are interconnected.
+
+Techniques involved:
+1. Entity Embeddings: Entities in knowledge graphs are converted to numerical representations that capture their meaning (Vector Store).
+2. Relation embedding: Relation between and entities are converted to numerical representations that capture their meaning.
+
+2.knowledge graph augmentation during training: Here LLM interacts with knowledge graph to access relevant information.
+
+Techniques include:
+1.Retrieval augmented reality: LLMs formulates a query based on user input and retrieve relevant information from the knowledge graph. 
+2.Knowledge graph Attention: Technique used to improve performance of a LLM by leveraging knowledge graph during training stage. This mechanism assigns weights to different parts of the knowledge graph. Highly weighted or relevant task will get higher attention as compare to lower relevant task which will attain lower attention.
+
+
+why access control ?
+To stop sensitive content generation that is unauthorised access. Mitigating bias that is offensive output, preventing missuse such as fake news, generating span etc.
+
+Technique to reduce it:
+1.Tradition technique: RBAC (role based access control) that is decide an element which be trained for which data that is research developer etc.
+2.Prompt engineering: For example, you are developing a bomb and you try to text the AI that build me a 'bomb' then that prompted text will get forwarded to another technique which will be input validation.
+3.Input Validation: The input validation will generate this text (Bomb) and will divert this text to the knowledge graph which in turn will give you an unauthorised error when passed back to you by your LLM app.
+
+
+Enforcing dynamic policies:
+This is done in order to provide better tools. The challenges we face here are:
+1. A real-time adoption that is quick response time
+2. Evolving policies: information should update and change based on new data and upcoming time like the example of chat GPT which has not been used which has not been updated since 2022.
+
+Techniques:
+1.Pre training: This can be done through knowledge graph and retrieval augmented generation.
+2.Runtime monitoring: Here system detects violent information, it can intervene the LLM.
+3.Human in the loop system: Where the human is involved between the AI and the prompt.
+
+
+Hallucination mitigation involves illogical, nonsensical, biasness or miss information.
+Methods: 
+1. Cleaning and filtering training data.
+2. Including diverse source of information.
+3. Knowledge graph
+4. Retrieval Augmented Generation
+5. Knowledge Graph themselves should be well maintained.
+6. Well prompts for the user.
+7. Incorporating attention mechanisms techniques to enhance the accuracy by giving weights.
+8. Cross entropy loss to measure Different between models predicted distribution of next word in sentence and the actual distribution in training data.
+
+
+Retrieval Augmented Generation and how it works?
+Let’s take an example if there is a user and he is prompting a word onto your LLM. Let’s take here app Gemini, the text you will give the gemini will be passed to the knowledge graph or vector store source and then it will be passed back to your Gemini. The LM will pass the information to the vector SQL where it will be stored and and is checked by the knowledge graph. It will then again passed to your Gemini tool and finally the user will get what he has asked for.
+
+Fine tuning:
+Fine tuning is training a data at a particular domain in the best form. let’s take an example of a mushroom and you want to know about the various species of mushroom and based on the species of that mushroom you are training the data at only that particular domain.
+
+Overview of how LM works:
+The user will give a query to the query analysis system then it will be passed to the domain specific data sheet. Let’s assume that this domain specific status. It contains a bird then it will be passed to the base LLM. During this process of passing your data at the base LLM it will be processed along with the relevant documents. For example if you are taking the example of a bird then it will detect which species of the bird you are be talking about, then this information will be passed to your base LLM along with the Gigantic Dataset containinhg the vector space. You will get the  gigantic data set that is your vector space along with the knowledge graph. It will contain information about the Wikipedia books and so on. After getting analysed this gigantic data set will pass your information to your base LLM. Then the final answer will be passed to the app that is your Gemini and that Gemini will be eventually get the promt to you.
